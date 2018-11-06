@@ -4,14 +4,19 @@ class StudentItem extends React.Component{
 
     constructor(props){
         super(props);
+
+        this.sendIndex = this.sendIndex.bind(this);
+    }
+
+    sendIndex(){
+        this.props.action(this.props.index);
     }
 
     render(){
-        console.log(this.props.student);
 
         return (
 
-            <li className={"list-group-item"}>
+            <li className={"list-group-item"} onClick={this.sendIndex}>
                 <div className={"row justify-content-center"}>
                     <div className={"col-md-1"}>
                         {this.props.student.name}

@@ -12,7 +12,7 @@ class StudentsList extends React.Component {
         return(
             this.props.students.map(
                 (element, index) => {
-                    return <StudentItem student={element} key={index}/>
+                    return <StudentItem student={element} index={index} key={index} action={this.props.listAction}/>
                 }
             )
         );
