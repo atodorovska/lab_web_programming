@@ -16,7 +16,7 @@ class StudentItem extends React.Component{
 
         return (
 
-            <li className={"list-group-item"} onClick={this.sendIndex}>
+            <li className={"list-group-item list-group-item-action"} onClick={this.sendIndex}>
                 <div className={"row justify-content-center"}>
                     <div className={"col-md-1"}>
                         {this.props.student.name}
@@ -26,6 +26,7 @@ class StudentItem extends React.Component{
                     </div>
                 </div>
             </li>
+
 
         );
     }

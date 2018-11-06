@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import StudentsList from "./components/studentsList"
 import {listStudents} from "./repository/studentRepository";
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import EditStudentDetails from "./components/editStudentDetails";
 
 class App extends Component {

@@ -25,28 +25,31 @@ class EditStudentDetails extends React.Component{
         if(!this.props.show) return null;
 
         return(
-            <form onSubmit={this.submitTheForm}>
-                <div className={"row"}>
-                    <div className={"col-3"}>
-                        <input type="text" name={"studentName"} placeholder={"Name..."}/>
-                    </div>
+           <div className={"m-5"}>
+               <form onSubmit={this.submitTheForm}>
+                    <div className={"form-row"}>
+                        <div className={"col-md-3"}>
+                            <input className={"form-control"} type="text" name={"studentName"} placeholder={"Name..."}/>
+                        </div>
 
-                    <div className={"col-3"}>
-                        <input type="text" name={"studentSurname"} placeholder={"Surname..."}/>
-                    </div>
+                        <div className={"col-md-3"}>
+                            <input className={"form-control"} type="text" name={"studentSurname"} placeholder={"Surname..."}/>
+                        </div>
 
-                    <div className={"col-3"}>
-                        <input type="text" name={"studentIndex"} placeholder={"Index..."}/>
-                    </div>
+                        <div className={"col-md-3"}>
+                            <input className={"form-control"} type="text" name={"studentIndex"} placeholder={"Index..."}/>
+                        </div>
 
-                    <div className={"col-3"}>
-                        <input type="text" name={"studentStudies"} placeholder={"Studies..."}/>
+                        <div className={"col-md-2"}>
+                            <input className={"form-control"} type="text" name={"studentStudies"} placeholder={"Studies..."}/>
+                        </div>
+
+                        <div className={"col-md-1"}>
+                            <button className={"btn btn-success"} type={"submit"}>Submit</button>
+                        </div>
                     </div>
-                </div>
-                <div className={"row justify-content-center"}>
-                    <button type={"submit"}>Submit</button>
-                </div>
-            </form>
+               </form>
+           </div>
         );
     }
 

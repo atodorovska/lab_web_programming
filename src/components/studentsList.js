@@ -10,11 +10,14 @@ class StudentsList extends React.Component {
     render() {
 
         return(
-            this.props.students.map(
-                (element, index) => {
-                    return <StudentItem student={element} index={index} key={index} action={this.props.listAction}/>
+            <ul className={"list-group"}>
+                {
+                    this.props.students.map(
+                    (element, index) => {
+                        return <StudentItem student={element} index={index} key={index} action={this.props.listAction}/>
+                    })
                 }
-            )
+            </ul>
         );
     }
 }
