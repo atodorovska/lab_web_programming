@@ -14,7 +14,7 @@ class StudentsList extends React.Component {
                 {
                     this.props.students.map(
                     (element, index) => {
-                        return <StudentItem student={element} index={index} key={index} action={this.props.listAction}/>
+                        return <StudentItem student={element} index={index} key={index} actionSelected={this.props.listActionSelected} actionDeleted={this.props.listActionDeleted}/>
                     })
                 }
             </ul>

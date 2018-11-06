@@ -13,19 +13,46 @@ class App extends Component {
         this.state = {
           students : listStudents(),
           showEdit: false,
-          selectedIndex: -1
+          selectedIndex: -1,
+          deleteIndex: -1
         }
 
-        this.notifyClicked = this.notifyClicked.bind(this);
+        this.formEditing = this.formEditing.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
+        this.listDelete = this.listDelete.bind(this);
+        this.deleteItemFromList = this.deleteItemFromList.bind(this);
     }
 
-    notifyClicked(index){
+    formEditing(index){
 
         this.setState({
             showEdit: true,
             selectedIndex: index
         })
+    }
+
+    deleteItemFromList(){
+
+        this.setState((state) => {
+
+            let tmpStudents = state.students;
+            delete tmpStudents[state.deleteIndex];
+
+            return {
+                students : tmpStudents,
+                showEdit: false,
+                deleteIndex: -1
+            }
+        })
+
+    }
+
+    listDelete(index){
+        this.setState({
+            deleteIndex: index
+        })
+
+        this.deleteItemFromList();
     }
 
     onFormSubmit(student){
@@ -46,7 +73,7 @@ class App extends Component {
     render() {
         return (
          <div>
-           <StudentsList students={this.state.students} listAction={this.notifyClicked}/>
+           <StudentsList students={this.state.students} listActionSelected={this.formEditing} listActionDeleted={this.listDelete}/>
            <EditStudentDetails show={this.state.showEdit} submitForm={this.onFormSubmit}/>
          </div>
         );

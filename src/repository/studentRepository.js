@@ -61,24 +61,6 @@ export const listStudents = () => {
             surname: "Mitrevska",
             index: "161005",
             studies: "KNI"
-        },
-        {
-            name: "Jovan",
-            surname: "Jovanovski",
-            index: "163025",
-            studies: "PET"
-        },
-        {
-            name: "Lile",
-            surname: "Nikolovska",
-            index: "163030",
-            studies: "PET"
-        },
-        {
-            name: "Dimitar",
-            surname: "Topalovski",
-            index: "151515",
-            studies: "KNIA"
         }
     ];
 };
