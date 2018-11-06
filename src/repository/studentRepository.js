@@ -40,12 +40,6 @@ export const listStudents = () => {
             studies: "KNI"
         },
         {
-            name: "Nikolina",
-            surname: "Nikolovska",
-            index: "152525",
-            studies: "KNI"
-        },
-        {
             name: "Trajce",
             surname: "Trajcevski",
             index: "131525",
@@ -55,11 +49,6 @@ export const listStudents = () => {
             name: "Veronika",
             surname: "Stefkova",
             index: "151025",
-            studies: "KNI"
-        },{
-            name: "Marija",
-            surname: "Mitrevska",
-            index: "161005",
             studies: "KNI"
         }
     ];

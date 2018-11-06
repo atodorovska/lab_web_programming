@@ -4,6 +4,7 @@ import './App.css';
 import StudentsList from "./components/studentsList"
 import {listStudents} from "./repository/studentRepository";
 import EditStudentDetails from "./components/editStudentDetails";
+import AddNewStudent from "./components/addNewStudent";
 
 class App extends Component {
 
@@ -13,14 +14,17 @@ class App extends Component {
         this.state = {
           students : listStudents(),
           showEdit: false,
+          showAdd: false,
           selectedIndex: -1,
           deleteIndex: -1
         }
 
         this.formEditing = this.formEditing.bind(this);
-        this.onFormSubmit = this.onFormSubmit.bind(this);
+        this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
         this.listDelete = this.listDelete.bind(this);
         this.deleteItemFromList = this.deleteItemFromList.bind(this);
+        this.listAdd = this.listAdd.bind(this);
+        this.onAddFormSubmit = this.onAddFormSubmit.bind(this);
     }
 
     formEditing(index){
@@ -55,7 +59,14 @@ class App extends Component {
         this.deleteItemFromList();
     }
 
-    onFormSubmit(student){
+    listAdd(){
+
+        this.setState({
+            showAdd: true
+        })
+    }
+
+    onEditFormSubmit(student){
 
         this.setState((state) => {
 
@@ -70,11 +81,29 @@ class App extends Component {
         })
     }
 
+    onAddFormSubmit(student){
+
+        this.setState((state) => {
+
+            let tmpStudents = state.students;
+            tmpStudents.push(student);
+
+            return {
+                students : tmpStudents,
+                showAdd: false
+            }
+        })
+    }
+
     render() {
         return (
          <div>
            <StudentsList students={this.state.students} listActionSelected={this.formEditing} listActionDeleted={this.listDelete}/>
-           <EditStudentDetails show={this.state.showEdit} submitForm={this.onFormSubmit}/>
+           <div className={"text-center my-5"}>
+               <button onClick={this.listAdd} className={"btn btn-success"}>Add new student...</button>
+           </div>
+           <AddNewStudent show={this.state.showAdd} submitForm={this.onAddFormSubmit}/>
+           <EditStudentDetails show={this.state.showEdit} submitForm={this.onEditFormSubmit}/>
          </div>
         );
   }
