@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactPaginate from 'react-paginate';
 
-import StudentItem from "./studentItem";
+import StudentItem from "../StudentItem/studentItem";
 
 class StudentsList extends React.Component {
 
@@ -10,7 +10,7 @@ class StudentsList extends React.Component {
 
         this.state = {
             pageNum: 0,
-            pageSize: 5
+            pageSize: 7
         }
 
         this.handlePageClick = this.handlePageClick.bind(this);

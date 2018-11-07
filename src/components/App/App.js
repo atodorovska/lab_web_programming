@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import StudentsList from "./components/studentsList"
-import {listStudents} from "./repository/studentRepository";
-import EditStudentDetails from "./components/editStudentDetails";
-import AddNewStudent from "./components/addNewStudent";
+import {listStudents} from "../../repository/studentRepository";
+import StudentsList from "../StudentList/studentsList";
+import AddNewStudent from "../AddNewStudent/addNewStudent";
+import EditStudentDetails from "../EditStudentDetails/editStudentDetails";
+
 
 class App extends Component {
 
