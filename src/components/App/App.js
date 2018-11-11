@@ -19,16 +19,9 @@ class App extends Component {
           selectedIndex: -1,
           deleteIndex: -1
         }
-
-        this.formEditing = this.formEditing.bind(this);
-        this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
-        this.listDelete = this.listDelete.bind(this);
-        this.deleteItemFromList = this.deleteItemFromList.bind(this);
-        this.listAdd = this.listAdd.bind(this);
-        this.onAddFormSubmit = this.onAddFormSubmit.bind(this);
     }
 
-    formEditing(index){
+    formEditing = (index) => {
 
         this.setState({
             showEdit: true,
@@ -36,7 +29,7 @@ class App extends Component {
         })
     }
 
-    deleteItemFromList(){
+    deleteItemFromList = () => {
 
         this.setState((state) => {
 
@@ -52,7 +45,7 @@ class App extends Component {
 
     }
 
-    listDelete(index){
+    listDelete = (index) => {
         this.setState({
             deleteIndex: index
         })
@@ -60,14 +53,14 @@ class App extends Component {
         this.deleteItemFromList();
     }
 
-    listAdd(){
+    listAdd = () => {
 
         this.setState({
             showAdd: true
         })
     }
 
-    onEditFormSubmit(student){
+    onEditFormSubmit = (student) => {
 
         this.setState((state) => {
 
@@ -82,7 +75,7 @@ class App extends Component {
         })
     }
 
-    onAddFormSubmit(student){
+    onAddFormSubmit = (student) => {
 
         this.setState((state) => {
 

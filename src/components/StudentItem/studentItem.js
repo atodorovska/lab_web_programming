@@ -4,16 +4,13 @@ class StudentItem extends React.Component{
 
     constructor(props){
         super(props);
-
-        this.selectedItemIndex = this.selectedItemIndex.bind(this);
-        this.deleteItemIndex = this.deleteItemIndex.bind(this);
     }
 
-    selectedItemIndex(){
+    selectedItemIndex = () => {
         this.props.actionSelected(this.props.index);
     }
 
-    deleteItemIndex(){
+    deleteItemIndex = () => {
         this.props.actionDeleted(this.props.index);
     }
 

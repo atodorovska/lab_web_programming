@@ -12,8 +12,6 @@ class StudentsList extends React.Component {
             pageNum: 0,
             pageSize: 7
         }
-
-        this.handlePageClick = this.handlePageClick.bind(this);
     }
 
     render() {
@@ -30,6 +28,8 @@ class StudentsList extends React.Component {
         //         }
         //     </ul>
         // );
+
+        // this is with pagination
 
         const offset = this.state.pageNum * this.state.pageSize;
         const nextPageOffset = offset + this.state.pageSize;

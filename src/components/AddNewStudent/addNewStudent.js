@@ -4,11 +4,9 @@ class AddNewStudent extends React.Component{
 
     constructor(props) {
         super(props);
-
-        this.submitTheForm = this.submitTheForm.bind(this);
     }
 
-    submitTheForm(formSubmitEvent){
+    submitTheForm = (formSubmitEvent) => {
 
         formSubmitEvent.preventDefault();
         this.props.submitForm(
