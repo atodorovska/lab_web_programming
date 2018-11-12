@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class StudentItem extends React.Component{
 
-    constructor(props){
-        super(props);
-    }
-
     selectedItemIndex = () => {
         this.props.actionSelected(this.props.index);
-    }
+    };
 
     deleteItemIndex = () => {
         this.props.actionDeleted(this.props.index);
-    }
+    };
 
     render(){
 

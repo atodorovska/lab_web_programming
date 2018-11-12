@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class AddNewStudent extends React.Component{
-
-    constructor(props) {
-        super(props);
-    }
 
     submitTheForm = (formSubmitEvent) => {
 
@@ -17,7 +13,7 @@ class AddNewStudent extends React.Component{
                 studies: formSubmitEvent.target.studentStudies.value
             }
         );
-    }
+    };
 
     render(){
         if(!this.props.show) return null;

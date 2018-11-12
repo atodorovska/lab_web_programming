@@ -27,7 +27,7 @@ class App extends Component {
             showEdit: true,
             selectedIndex: index
         })
-    }
+    };
 
     deleteItemFromList = () => {
 
@@ -43,22 +43,22 @@ class App extends Component {
             }
         })
 
-    }
+    };
 
     listDelete = (index) => {
         this.setState({
             deleteIndex: index
-        })
+        });
 
         this.deleteItemFromList();
-    }
+    };
 
     listAdd = () => {
 
         this.setState({
             showAdd: true
         })
-    }
+    };
 
     onEditFormSubmit = (student) => {
 
@@ -73,7 +73,7 @@ class App extends Component {
                 selectedIndex: -1
             }
         })
-    }
+    };
 
     onAddFormSubmit = (student) => {
 
@@ -87,7 +87,7 @@ class App extends Component {
                 showAdd: false
             }
         })
-    }
+    };
 
     render() {
         return (
