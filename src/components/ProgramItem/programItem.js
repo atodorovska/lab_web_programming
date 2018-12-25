@@ -1,10 +1,6 @@
 import React from 'react';
 
-class StudentItem extends React.Component{
-
-    selectedItemIndex = () => {
-        this.props.actionSelected(this.props.index);
-    };
+class ProgramItem extends React.Component{
 
     deleteItemIndex = () => {
         this.props.actionDeleted(this.props.index);
@@ -21,20 +17,18 @@ class StudentItem extends React.Component{
             <li className={"list-group-item list-group-item-action"}>
                 <div className={"row justify-content-center"}>
                     <div className={"col-md-1"}>
-                        {this.props.student.name}
+                        {this.props.program.name}
                     </div>
                     <div className={"col-md-1"}>
-                        {this.props.student.lastName}
+                        {this.props.program.lastName}
                     </div>
-                    <button className={"btn col-md-1 ml-4"} onClick={this.selectedItemIndex}>Details</button>
                     <button className={"btn col-md-1 ml-4"} onClick={this.editItemIndex}>Change</button>
                     <button className={"btn col-md-1 ml-4"} onClick={this.deleteItemIndex}>Delete</button>
                 </div>
             </li>
 
-
         );
     }
 }
 
-export default StudentItem;
+export default ProgramItem;

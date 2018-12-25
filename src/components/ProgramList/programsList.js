@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import ProgramItem from "../ProgramItem/programItem";
 
-import StudentItem from "../StudentItem/studentItem";
-
-class StudentsList extends React.Component {
+class ProgramsList extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,25 +15,10 @@ class StudentsList extends React.Component {
 
     render() {
 
-        // this is without pagination
-
-        // return(
-        //     <ul className={"list-group"}>
-        //         {
-        //             this.props.students.map(
-        //             (element, index) => {
-        //                 return <StudentItem student={element} index={index} key={index} actionSelected={this.props.listActionSelected} actionDeleted={this.props.listActionDeleted}/>
-        //             })
-        //         }
-        //     </ul>
-        // );
-
-        // this is with pagination
-
         const offset = this.state.pageNum * this.state.pageSize;
         const nextPageOffset = offset + this.state.pageSize;
         const pageCount = Math.ceil(this.props.students.length / this.state.pageSize);
-        const students = this.getStudentsPage(offset, nextPageOffset);
+        const students = this.getProgramsPage(offset, nextPageOffset);
 
         return (
 
@@ -65,11 +49,11 @@ class StudentsList extends React.Component {
         this.setState({pageNum: selected});
     };
 
-    getStudentsPage = (offset, nextPageOffset) => {
+    getProgramsPage = (offset, nextPageOffset) => {
 
         return this.props.students
             .map((element, index) => {
-                return <StudentItem student={element} index={index} key={index} actionEdit={this.props.listActionEdited} actionSelected={this.props.listActionSelected} actionDeleted={this.props.listActionDeleted}/>
+                return <ProgramItem program={element} index={index} key={index} actionEdit={this.props.listActionEdited} actionDeleted={this.props.listActionDeleted}/>
             })
             .filter((student, index) => {
                 return index >= offset && index < nextPageOffset;
@@ -77,4 +61,4 @@ class StudentsList extends React.Component {
     };
 }
 
-export default StudentsList;
+export default ProgramsList;

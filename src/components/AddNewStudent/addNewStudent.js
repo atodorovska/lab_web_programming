@@ -35,7 +35,13 @@ class AddNewStudent extends React.Component{
                         </div>
 
                         <div className={"col-md-2"}>
-                            <input className={"form-control"} type="text" name={"studentStudies"} placeholder={"Studies..."}/>
+                            <select className={"form-control"} name={"studentStudies"} placeholder={"Studies..."}>
+                                <option value={"KNI"}>KNI</option>
+                                <option value={"KNIA"}>KNIA</option>
+                                <option value={"PET"}>PET</option>
+                                <option value={"MT"}>MT</option>
+                                <option value={"IKI"}>IKI</option>
+                            </select>
                         </div>
 
                         <div className={"col-md-1"}>
